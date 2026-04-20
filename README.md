@@ -1,4 +1,4 @@
-# htmlPlayer
+# Njihia Muranga || 166142
 Pure HTML/JS audio player for Multimedia assignment
 
 Features:
