@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Multimedia Audio Player</title>
+<link rel="stylesheet" href="style.css">
+<script src="player.js" defer></script>
+</head>
+<body>
+
+<h1>HTML/JS Audio Player (Multimedia Assignment)</h1>
+
+<div class="container">
+
+<div class="player">
+
+    <input type="file" id="fileInput" class="upload" accept="audio/*">  <!-- allow user to upload files -->
+
+    <!-- button controls (featuring custom SVGs) -->
+
+    <div class="button-group">
+
+    <button id="backBtn" title="Skip back 5 seconds">
+        <svg viewBox="0 0 394.941 394.941" width="24" height="24" fill="currentColor" style="transform: scaleX(-1);">
+            <path d="M185.492,211.636v109.588l209.449-123.747L185.492,73.718v109.611L0,73.718v247.506L185.492,211.636 z"/>
+        </svg>
+    </button>
+
+    <button id="playBtn" title="Play/Pause">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <polygon points="6,4 20,12 6,20" />
+        </svg>
+    </button>
+
+    <button id="forwardBtn" title="Skip forward 5 seconds">
+        <svg viewBox="0 0 394.941 394.941" width="24" height="24" fill="currentColor">
+            <path d="M185.492,211.636v109.588l209.449-123.747L185.492,73.718v109.611L0,73.718v247.506L185.492,211.636 z"/>
+        </svg>
+    </button>
+
+    </div>
+
+    <!-- progress bar for the audio playback -->
+
+    <div class="progress-container" id="progressBar">   <!-- progress container -->
+        <div class="progress" id="progress"></div>  <!-- the actual progress bar inside the container (we manipulate the width of this relative to the container) -->
+    </div>
+
+    <!-- time displays (self explanatory) -->
+
+    <div class="time">
+        <span id="currentTime">0:00</span>
+        <span id="audioLength">0:00</span>
+    </div>
+
+    <!-- volume controls (more SVGs) -->
+    <div class="volume-container">
+        <label for="volumeSlider">Volume</label>
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1">
+        <button id="muteBtn" title="Mute/Unmute">
+            <svg id="muteIcon" viewBox="0 0 24 24" width="22" height="22" fill="white">
+                <path d="M18.0003 16.7503C17.8403 16.7503 17.6903 16.7003 17.5503 16.6003C17.2203 16.3503 17.1503 15.8803 17.4003 15.5503C18.9703 13.4603 18.9703 10.5403 17.4003 8.45027C17.1503 8.12027 17.2203 7.65027 17.5503 7.40027C17.8803 7.15027 18.3503 7.22027 18.6003 7.55027C20.5603 10.1703 20.5603 13.8303 18.6003 16.4503C18.4503 16.6503 18.2303 16.7503 18.0003 16.7503Z"/>
+                <path d="M19.8284 19.2503C19.6684 19.2503 19.5184 19.2003 19.3784 19.1003C19.0484 18.8503 18.9784 18.3803 19.2284 18.0503C21.8984 14.4903 21.8984 9.51027 19.2284 5.95027C18.9784 5.62027 19.0484 5.15027 19.3784 4.90027C19.7084 4.65027 20.1784 4.72027 20.4284 5.05027C23.4984 9.14027 23.4984 14.8603 20.4284 18.9503C20.2884 19.1503 20.0584 19.2503 19.8284 19.2503Z"/>
+                <path d="M14.02 3.78168C12.9 3.16168 11.47 3.32168 10.01 4.23168L7.09 6.06168C6.89 6.18168 6.66 6.25168 6.43 6.25168H5.5H5C2.58 6.25168 1.25 7.58168 1.25 10.0017V14.0017C1.25 16.4217 2.58 17.7517 5 17.7517H5.5H6.43C6.66 17.7517 6.89 17.8217 7.09 17.9417L10.01 19.7717C10.89 20.3217 11.75 20.5917 12.55 20.5917C13.07 20.5917 13.57 20.4717 14.02 20.2217C15.13 19.6017 15.75 18.3117 15.75 16.5917V7.41168C15.75 5.69168 15.13 4.40168 14.02 3.78168Z"/>
+            </svg>
+        </button>
+    </div>
+
+
+    <audio id="audio"></audio>  <!-- hidden default HTML audio element that we're manipulating -->
+</div>
+
+</div>
+
+</body>
+</html>
