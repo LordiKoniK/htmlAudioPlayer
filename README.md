@@ -1,5 +1,6 @@
 # htmlPlayer
 Pure HTML/JS audio player for Multimedia assignment
+
 Don't mind the repo name I confused it at first apologies
 
 Features:
